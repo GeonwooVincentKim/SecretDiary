@@ -2,6 +2,7 @@ package com.example.secretdiary
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             if(passwordPreferences.getString("password", "000").equals(passwordFromUser)){
                 // Success
                 // Hand over the result after write the TODO Diary Page
-//                startActivity()
+                startActivity(Intent(this, DiaryActivity::class.java))
             } else {
                 // Fail
                 showErrorAlertDialog()
