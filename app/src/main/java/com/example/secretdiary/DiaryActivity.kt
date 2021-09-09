@@ -33,6 +33,24 @@ class DiaryActivity : AppCompatActivity() {
             Log.d("DiaryActivity", "SAVE!!! ${diaryEditText.text.toString()}")
         }
 
+        /* `UI` part works this section only */
+        runOnUiThread{
+
+        }
+
+        /* Original version (When the developer did not use `Main-Looper` */
+        handler.post{
+
+        }
+
+        /* This is not a main-thread, because it is not `UI-Thread` part */
+        var t = Thread(Runnable{
+            // Network task
+
+
+            Log.e("aa", "aa")
+        }).start()
+
         diaryEditText.addTextChangedListener {
             Log.d("DiaryActivity", "TextChanged :: $it")
             handler.removeCallbacks(runnable) // Delete if there is message callback
