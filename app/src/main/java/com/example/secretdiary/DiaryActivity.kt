@@ -26,6 +26,7 @@ class DiaryActivity : AppCompatActivity() {
 
         /* Asynchronous Style - Editor */
         val runnable = Runnable {
+            /* Kotlin KTX Grammer */
             getSharedPreferences("diary", Context.MODE_PRIVATE).edit {
                 putString("detail", diaryEditText.text.toString())
             }
