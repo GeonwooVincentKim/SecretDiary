@@ -73,13 +73,8 @@ class MainActivity : AppCompatActivity() {
                 // Hand over the result after write the TODO Diary Page
 //                startActivity()
             } else {
-                AlertDialog.Builder(this)
-                    .setTitle("실패")
-                    .setMessage("비밀번호가 잘못되었습니다.")
-                    .setPositiveButton("확인"){ _, _ -> }
-                    .create()
-                    .show()
                 // Fail
+                showErrorAlertDialog()
             }
         }
 
@@ -120,15 +115,19 @@ class MainActivity : AppCompatActivity() {
                     changePasswordButton.setBackgroundColor(Color.RED)
 
                 } else {
-                    AlertDialog.Builder(this)
-                        .setTitle("실패")
-                        .setMessage("비밀번호가 잘못되었습니다.")
-                        .setPositiveButton("확인"){ _, _ -> }
-                        .create()
-                        .show()
                     // Fail
+                    showErrorAlertDialog()
                 }
             }
         }
+    }
+
+    private fun showErrorAlertDialog(){
+        AlertDialog.Builder(this)
+            .setTitle("실패")
+            .setMessage("비밀번호가 잘못되었습니다.")
+            .setPositiveButton("확인"){ _, _ -> }
+            .create()
+            .show()
     }
 }
