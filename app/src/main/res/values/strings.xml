@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SecretDiary</string>
     <string name="topTextView">The Secret Garden</string>
+    <string name="placeholderContents">내용을 입력하세요</string>
 </resources>
